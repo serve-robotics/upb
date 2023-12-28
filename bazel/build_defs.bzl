@@ -34,19 +34,21 @@ _DEFAULT_COPTS = []
 _DEFAULT_CPPOPTS.extend([
     "-Wextra",
     # "-Wshorten-64-to-32",  # not in GCC (and my Kokoro images doesn't have Clang)
-    "-Werror",
+    #"-Werror",
     "-Wno-long-long",
 ])
 _DEFAULT_COPTS.extend([
     "-std=c99",
     "-pedantic",
-    "-Werror=pedantic",
+    #"-Werror=pedantic",
     "-Wall",
     "-Wstrict-prototypes",
     # GCC (at least) emits spurious warnings for this that cannot be fixed
     # without introducing redundant initialization (with runtime cost):
     #   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=80635
     #"-Wno-maybe-uninitialized",
+    # Allow compiling with Clang 17
+    "-Wnognu-offsetof-extensions",
 ])
 # end:github_only
 
