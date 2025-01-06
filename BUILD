@@ -124,7 +124,7 @@ cc_library(
         "upb/upb.h",
         "upb/upb.hpp",
     ],
-    copts = UPB_DEFAULT_COPTS,
+    copts = ["-Wno-gnu-offsetof-extensions"],
     visibility = ["//visibility:public"],
     deps = [
         ":extension_registry",
@@ -195,7 +195,7 @@ cc_library(
         "upb/mini_table.h",
         "upb/mini_table.hpp",
     ],
-    copts = UPB_DEFAULT_COPTS,
+    copts = ["-Wno-gnu-offsetof-extensions"],
     visibility = ["//visibility:public"],
     deps = [
         ":extension_registry",
@@ -748,7 +748,7 @@ cc_library(
     name = "amalgamation",
     srcs = ["upb.c"],
     hdrs = ["upb.h"],
-    copts = UPB_DEFAULT_COPTS,
+    copts = ["-Wno-gnu-offsetof-extensions"],
     deps = ["//third_party/utf8_range"],
 )
 
