@@ -147,7 +147,7 @@ cc_library(
         "upb/mini_table.h",
         "upb/mini_table.hpp",
     ],
-    copts = UPB_DEFAULT_COPTS,
+    copts = ["-Wno-gnu-offsetof-extensions"],
     visibility = ["//visibility:public"],
     deps = [
         ":mini_table_internal",
