@@ -119,7 +119,7 @@ cc_library(
         "upb/upb.h",
         "upb/upb.hpp",
     ],
-    copts = UPB_DEFAULT_COPTS,
+    copts = ["-Wno-gnu-offsetof-extensions"],
     visibility = ["//visibility:public"],
     deps = [
         ":fastdecode",
@@ -677,7 +677,7 @@ cc_library(
     name = "amalgamation",
     srcs = ["upb.c"],
     hdrs = ["upb.h"],
-    copts = UPB_DEFAULT_COPTS,
+    copts = ["-Wno-gnu-offsetof-extensions"],
     deps = ["//third_party/utf8_range"],
 )
 
